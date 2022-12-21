@@ -1,23 +1,27 @@
 #!/usr/bin/python3
-''' A Module that creates a Square object '''
+"""
+No module imported
+"""
 
-class Square;
-''' Creating an Object template '''
 
-    def __init__(self, size = 0):
-        '''
-            The init method initializes the class instance
-
-        @self:
-            A parameter used to refer to the class instance
-
-        @size:
-            The size of the square, must be a +ve integer
-        '''
-        if type(size) is int:
-            if size < 0:
-                raise ValueError('Size must be >= 0')
-            else:
-                self.__size = size
-        else:
-            raise TypeError('Size must be an integer')
+class Square:
+    """
+    Defines a square by private attribute size,
+    and instantiation with optional size:
+    def __init__(self, size=0):
+    """
+    def __init__(self, size=0):
+        """
+        private instance attribute
+        parameters
+        ------------------
+        size : integer else TypeError
+        if size less than 0, raise value error
+        """
+        self.__size = size
+        try:
+            assert type(size) == int
+        except:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
